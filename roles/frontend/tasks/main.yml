@@ -30,7 +30,3 @@
     state: restarted
     enabled: true
 
-# echo -e "${color} systemd start ${nocolor}"
-# systemctl enable nginx &>>${log_file}
-# systemctl restart nginx &>>${log_file}
-# stat_check $?
