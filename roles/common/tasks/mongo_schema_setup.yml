@@ -1,12 +1,4 @@
 
-#     echo -e "${color} install mongodb ${nocolor}"
-#     yum install mongodb-org-shell -y &>>${log_file}
-#     stat_check $? 
-
-#     echo -e "${color}  Loading the catalouge ${nocolor}"
-#     mongo --host mongodb-dev.erobo.online <${app_path}/schema/${component}.js &>>${log_file}
-#     stat_check $? 
-
 - name: Creating the Services
   ansible.builtin.copy:
     src: mongodb.repo
