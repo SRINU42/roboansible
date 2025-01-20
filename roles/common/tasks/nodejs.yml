@@ -1,0 +1,26 @@
+- name: disable nodejs leatest version
+  ansible.builtin.shell: "{{ item }}"
+  loop:
+     - dnf module disable nodejs -y
+     - dnf module enable nodejs:18 -y 
+
+
+- name: Install NodeJS 
+  ansible.builtin.yum:
+    name: nodejs
+    state: installed
+
+- name: Include task list in play
+  ansible.builtin.import_tasks:
+    file: app_presetup.yml
+  
+- name: Install nodes
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+
+- name: systemd_setup
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
+  
+  
