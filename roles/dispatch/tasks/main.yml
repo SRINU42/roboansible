@@ -27,7 +27,7 @@
   ansible.builtin.shell: go mod init dispatch ; go get ; go build
   args:
     dest: /app
-    remote_src: yes
+  remote_src: yes
     
 - name: Config the dispatch file
   ansible.builtin.copy:
