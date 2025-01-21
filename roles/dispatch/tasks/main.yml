@@ -38,3 +38,4 @@
     name: dispatch 
     state: restarted
     enabled: true
+    daemon-reload: true
