@@ -12,6 +12,7 @@
 
 - name: Install Python pipe3.6
   ansible.builtin.shell: pip3.6 install -r requirements.txt
+  args:
     chdir: /app
 
 - name: Sysyemd setup
