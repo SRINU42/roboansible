@@ -1,0 +1,8 @@
+
+
+- name: Install MySQl
+  ansible.builtin.shell: dnf install mysql -y 
+
+- name: Load Schema
+  ansible.builtin.shell: mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql 
+
