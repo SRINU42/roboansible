@@ -1,0 +1,43 @@
+- name: Install Golang
+  ansible.builtin.yum:
+    name: golang
+    state: installed
+- name: Create a user Roboshop
+  ansible.builtin.user:
+    name: roboshop
+
+- name: Remove Directory
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: Create a Directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: Dowloading and Extract The Content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/dispatch..zip
+    dest: /app
+    remote_src: yes
+    
+- name: Init Dispatch
+  ansible.builtin.shell: go mod init dispatch ; go get ; go build
+    dest: /app
+    remote_src: yes
+    
+- name: Config the dispatch file
+  ansible.builtin.copy:
+    src: dispatch.service
+    dest: /etc/systemd/system/dispatch.service
+
+- name: systemd setup
+  ansible.builtin.systemd_service:
+    name: dispatch 
+    state: restarted
+    enabled: true
+# echo -e "${color} Start SystemD  ${nocolor}"
+# systemctl daemon-reload &>>${log_file}
+# systemctl enable ${component} &>>${log_file}
+# systemctl restart ${component} &>>${log_file}
