@@ -19,7 +19,7 @@
 
 - name: Dowloading and Extract The Content
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/dispatch..zip
+    src: https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
     dest: /app
     remote_src: yes
     
