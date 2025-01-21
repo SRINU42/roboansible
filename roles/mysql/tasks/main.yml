@@ -8,7 +8,7 @@
 
 - name: Install the MySQL Servier
   ansible.builtin.yum:
-    name: mysql-community-server -y
+    name: mysql-community-server
     state: installed
 
 - name: systemd setup
