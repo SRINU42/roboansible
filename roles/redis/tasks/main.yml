@@ -1,5 +1,5 @@
-- name: Installing the Repo file
-  ansible.builtin.shell: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+#- name: Installing the Repo file
+#  ansible.builtin.shell: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 #  ansible.builtin.yum:
 #    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 #    state: installed
