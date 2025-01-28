@@ -21,12 +21,19 @@
 
 - name: Update redis Listen Address
   ansible.builtin.replace:
-    path: "{{ item }}"
+    path: /etc/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
-  loop:
-    - /etc/redis.conf
-    - /etc/redis/redis.conf
+#  loop:
+#    - /etc/redis.conf
+#    - /etc/redis/redis.conf
+
+- name: Update /etc/redis/redis.conf Listen Address
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
 
 - name: SystemD setup
   ansible.builtin.systemd_service:
