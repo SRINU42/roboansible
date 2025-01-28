@@ -4,8 +4,8 @@ Description=Shipping Service
 
 [Service]
 User=roboshop
-Environment=CART_ENDPOINT=cart-{{env}}.erobo.online:8080
-Environment=DB_HOST=mysql-{{env}}.erobo.online
+Environment=CART_ENDPOINT=cart-dev.erobo.online:8080
+Environment=DB_HOST=mysql-dev.erobo.online
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
