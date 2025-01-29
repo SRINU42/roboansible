@@ -41,7 +41,3 @@
     state: restarted
     enabled: true  
    
-
-# echo -e "${color} Enable and Start the ${component} ${nocolor}"
-# systemctl enable ${component} &>>${log_file}
-# systemctl restart ${component} &>>${log_file}
