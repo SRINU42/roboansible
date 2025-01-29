@@ -4,5 +4,5 @@
   ansible.builtin.shell: dnf install mysql -y 
 
 - name: Load Schema
-  ansible.builtin.shell: mysql -h mysql-dev.erobo.online -uroot -pRoboShop@1 < /app/schema/shipping.sql 
+  ansible.builtin.shell: mysql -h mysql-{{env}}.erobo.online -uroot -pRoboShop@1 < /app/schema/shipping.sql 
 

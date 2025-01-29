@@ -29,7 +29,7 @@
     chdir: /app
     
 - name: Config the dispatch file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: dispatch.service
     dest: /etc/systemd/system/dispatch.service
 

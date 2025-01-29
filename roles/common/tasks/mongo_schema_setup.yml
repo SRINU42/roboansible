@@ -10,4 +10,4 @@
     state: installed
 
 - name: Loading the catalouge
-  ansible.builtin.shell: mongo --host mongodb-dev.erobo.online </app/schema/{{ component }}.js
+  ansible.builtin.shell: mongo --host mongodb-{{env}}.erobo.online </app/schema/{{ component }}.js
