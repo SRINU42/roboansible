@@ -1,5 +1,5 @@
 
-- name: Run tasks/other.yaml instead of 'main'
+- name: Config NodeJS
   ansible.builtin.import_role:
     name: common
     tasks_from: nodejs
