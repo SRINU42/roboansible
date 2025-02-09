@@ -26,4 +26,15 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["localhost:9090","172.31.43.150:9090"]
+      - targets: ["localhost:9090"]
+
+  - job_name: ec2
+    ec2_sd_configs: 
+      - region: us-east-1
+        port: 9100
+        filters:
+          - name: "tag:Monitor"
+            values: ["true", "yes"] 
+    relabel_configs:
+      - source_labels: [-eta-ec2-tag-name]
+        target_label: component
